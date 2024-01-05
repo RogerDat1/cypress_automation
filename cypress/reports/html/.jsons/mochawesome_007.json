@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-03T06:08:08.902Z",
+    "end": "2024-01-03T06:08:09.134Z",
+    "duration": 232,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "0669b067-1663-458e-b332-3e02e5646b1a",
+      "title": "",
+      "fullFile": "cypress/e2e/Conduit App/Articles/functionalityTests.cy.js",
+      "file": "cypress/e2e/Conduit App/Articles/functionalityTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce258b3f-7d53-40a6-abb8-97d50d36a370",
+          "title": "Verify user can Create, View and Delete a Newly Created Article",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add a New Article",
+              "fullTitle": "Verify user can Create, View and Delete a Newly Created Article Add a New Article",
+              "timedOut": null,
+              "duration": 192,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".nav-link\").contains(\"New Article\").click();\ncy.get('input[placeholder=\"Article Title\"]').type(articleName);\ncy.get(`input[placeholder=\"What's this article about?\"]`).type(articleDescription);\ncy.get('textarea[placeholder=\"Write your article (in markdown)\"]').type(articleText);\ncy.get('input[placeholder=\"Enter tags\"]').type(tagName);\ncy.get(\".btn\").contains(\"Publish Article\").click();\ncy.wait(\"@articles\").its(\"response.statusCode\").should(\"eq\", 200);",
+              "err": {
+                "message": "TypeError: cy.loginConduit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.",
+                "estack": "TypeError: cy.loginConduit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Conduit%20App/Articles/functionalityTests.cy.js:6:8)",
+                "diff": null
+              },
+              "uuid": "ccbdae46-f64d-488f-82f7-30cfba7f574b",
+              "parentUUID": "ce258b3f-7d53-40a6-abb8-97d50d36a370",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Article appears on Profile page",
+              "fullTitle": "Verify user can Create, View and Delete a Newly Created Article Verify Article appears on Profile page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".user-pic\").click();\ncy.get(\".preview-link\").contains(articleDescription);\ncy.get(\".preview-link\").contains(articleName).click();",
+              "err": {},
+              "uuid": "3d781681-6c55-4ef8-a9e4-72cde98d0e9e",
+              "parentUUID": "ce258b3f-7d53-40a6-abb8-97d50d36a370",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Verify Article Details appear on the Article page",
+              "fullTitle": "Verify user can Create, View and Delete a Newly Created Article Verify Article Details appear on the Article page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".user-pic\").click();\ncy.wait(\"@allArticles\").its(\"response.statusCode\").should(\"eq\", 200);\ncy.get(\".preview-link\").contains(articleName).click();\ncy.get(\".banner\").contains(articleName);\ncy.get(\".row.article-content\").contains(articleText);",
+              "err": {},
+              "uuid": "c3ab8661-9b18-48f5-b736-5fe05f96b1a9",
+              "parentUUID": "ce258b3f-7d53-40a6-abb8-97d50d36a370",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Delete the Newly Created Article",
+              "fullTitle": "Verify user can Create, View and Delete a Newly Created Article Delete the Newly Created Article",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".user-pic\").click();\ncy.wait(\"@allArticles\").its(\"response.statusCode\").should(\"eq\", 200);\ncy.get(\".preview-link\").contains(articleName).click();\ncy.get(\".ion-trash-a\").eq(0).click({ force: true });\ncy.location(\"pathname\").should(\"eq\", \"/\");\ncy.get(\".user-pic\").click();\ncy.get(\".article-preview\").contains(\"No articles are here... yet.\");",
+              "err": {},
+              "uuid": "1bdd7984-8585-40c4-b690-20259fcc67cf",
+              "parentUUID": "ce258b3f-7d53-40a6-abb8-97d50d36a370",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ccbdae46-f64d-488f-82f7-30cfba7f574b"
+          ],
+          "pending": [],
+          "skipped": [
+            "3d781681-6c55-4ef8-a9e4-72cde98d0e9e",
+            "c3ab8661-9b18-48f5-b736-5fe05f96b1a9",
+            "1bdd7984-8585-40c4-b690-20259fcc67cf"
+          ],
+          "duration": 192,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 0,
+    "pending": 0,
+    "failures": 6,
+    "start": "2024-01-03T06:07:43.233Z",
+    "end": "2024-01-03T06:08:05.927Z",
+    "duration": 22694,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f29a7b9-f0f5-42d0-ba21-1f59ebfae2e2",
+      "title": "",
+      "fullFile": "cypress/e2e/Dummy API/apiTests.cy.js",
+      "file": "cypress/e2e/Dummy API/apiTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+          "title": "API testing with dummy APIs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new airline entry via POST endpoint",
+              "fullTitle": "API testing with dummy APIs Create a new airline entry via POST endpoint",
+              "timedOut": null,
+              "duration": 4001,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", \"https://api.instantwebtools.net/v1/airlines\", {\n  \"id\": airlineId,\n  \"name\": this.data.airlineName,\n  \"country\": this.data.country,\n  \"logo\": this.data.logo,\n  \"slogan\": this.data.slogan,\n  \"head_quaters\": this.data.headquarters,\n  \"website\": this.data.website,\n  \"established\": this.data.established\n}).then((response) => {\n  expect(response.status).to.eql(200);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/airlines\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.instantwebtools.net/v1/airlines\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/airlines\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.instantwebtools.net/v1/airlines\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:13:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "8aa8ab00-f50f-48d6-a52e-fde521e248f1",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify newly created airline is returned in GET endpoint",
+              "fullTitle": "API testing with dummy APIs Verify newly created airline is returned in GET endpoint",
+              "timedOut": null,
+              "duration": 3792,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", `https://api.instantwebtools.net/v1/airlines/${airlineId}`).then((response) => {\n  expect(response.status).to.eql(200);\n  expect(response.body.country).to.eql(this.data.country);\n  expect(response.body.established).to.eql(this.data.established);\n  expect(response.body.head_quaters).to.eql(this.data.headquarters);\n  expect(response.body.id).to.eql(airlineId);\n  expect(response.body.logo).to.eql(this.data.logo);\n  expect(response.body.name).to.eql(this.data.airlineName);\n  expect(response.body.slogan).to.eql(this.data.slogan);\n  expect(response.body.website).to.eql(this.data.website);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/airlines/1704262063209\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.instantwebtools.net/v1/airlines/1704262063209\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/airlines/1704262063209\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.instantwebtools.net/v1/airlines/1704262063209\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:27:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "498336ee-c19b-4137-ba26-3618ad070b04",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create New Passenger to Newly Created Airline via POST endpoint",
+              "fullTitle": "API testing with dummy APIs Create New Passenger to Newly Created Airline via POST endpoint",
+              "timedOut": null,
+              "duration": 3676,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", \"https://api.instantwebtools.net/v1/passenger\", {\n  \"name\": passengerName,\n  \"trips\": 15,\n  \"airline\": airlineId\n}).then((response) => {\n  expect(response.status).to.eql(200);\n  passengerId = response.body._id;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.instantwebtools.net/v1/passenger\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.instantwebtools.net/v1/passenger\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:40:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "c81c64b9-2f3f-4345-a1bc-261a225821fe",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Retriever Passenger with Passenger ID using GET endpoint",
+              "fullTitle": "API testing with dummy APIs Retriever Passenger with Passenger ID using GET endpoint",
+              "timedOut": null,
+              "duration": 3671,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", `https://api.instantwebtools.net/v1/passenger/${passengerId}`).then((response) => {\n  expect(response.status).to.eql(200);\n  expect(response.body._id).to.eql(passengerId);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:50:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "96bcd24b-67ac-4791-adde-8796d4d3637c",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update the details of the Passenger using PUT endpoint",
+              "fullTitle": "API testing with dummy APIs Update the details of the Passenger using PUT endpoint",
+              "timedOut": null,
+              "duration": 3674,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"PUT\", `https://api.instantwebtools.net/v1/passenger/${passengerId}`, {\n  \"name\": passengerName,\n  \"trips\": 30,\n  \"airline\": airlineId\n}).then((response) => {\n  expect(response.status).to.eql(200);\n  expect(response.body.message).to.eql(\"Passenger data put successfully completed.\");\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:56:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "d362c876-4038-49a7-b17c-e8b07b0da4ca",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete the Passenger using DELETE endpoint",
+              "fullTitle": "API testing with dummy APIs Delete the Passenger using DELETE endpoint",
+              "timedOut": null,
+              "duration": 3770,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"DELETE\", `https://api.instantwebtools.net/v1/passenger/${passengerId}`).then((response) => {\n  expect(response.status).to.eql(200);\n  expect(response.body.message).to.eql(\"Passenger data deleted successfully.\");\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttps://api.instantwebtools.net/v1/passenger/undefined\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 68.183.127.50:443\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://api.instantwebtools.net/v1/passenger/undefined\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:133025:70)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://demo.realworld.io/__cypress/runner/cypress_runner.js:4203:37)\n    at tryCatcher (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://demo.realworld.io/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://demo.realworld.io/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (https://demo.realworld.io/__cypress/tests?p=cypress/e2e/Dummy%20API/apiTests.cy.js:66:10)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 68.183.127.50:443\n      at new r (<embedded>:1832:361370)\n      at ee.callback (<embedded>:1832:367371)\n      at e.callback.s.callback [as _callback] (<embedded>:1832:366817)\n      at s._callback.s.callback.s.callback (<embedded>:2050:91633)\n      at ee.emit (node:events:513:28)\n      at ee.onRequestError (<embedded>:2050:100575)\n      at ClientRequest.emit (node:events:525:35)\n      at TLSSocket.socketErrorListener (node:_http_client:502:9)\n      at TLSSocket.emit (node:events:513:28)\n      at emitErrorNT (node:internal/streams/destroy:151:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+                "diff": null
+              },
+              "uuid": "ef67ff77-e640-443f-b12d-bbc98fdb73dc",
+              "parentUUID": "f7ab69bf-f325-4163-a001-5dc3c7d7fe46",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8aa8ab00-f50f-48d6-a52e-fde521e248f1",
+            "498336ee-c19b-4137-ba26-3618ad070b04",
+            "c81c64b9-2f3f-4345-a1bc-261a225821fe",
+            "96bcd24b-67ac-4791-adde-8796d4d3637c",
+            "d362c876-4038-49a7-b17c-e8b07b0da4ca",
+            "ef67ff77-e640-443f-b12d-bbc98fdb73dc"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22584,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
